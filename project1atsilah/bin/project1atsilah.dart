@@ -35,8 +35,25 @@ void main(List<String> arguments) {
   num nilai = 99.5; // bisa diisi int atau double
   stdout.writeln("nilai saya $nilai");
   dynamic bebas = "90"; // bisa diisi semua tipe data
-  stdout.writeln("nilai dari dynamic = $bebas");
-  String angka = "100";
-  int angkaku = int.parse(angka); // konversi String ke int
-  int angkaku2 = bebas;
+  // stdout.writeln("nilai dari dynamic = $bebas");
+  // String angka = "100";
+  // int angkaku = int.parse(angka); // konversi String ke int
+  // int angkaku2 = bebas;
+
+// list
+List<String> hobi = ["Tidur", "Tidur", "Tidur"];
+hobi.add("Makan");
+stdout.writeln("Hobi saya: $hobi");
+Map<String, String> biodata = {
+  "nama": "atsilah",
+  "alamat": "jl. simpang remujung",
+  "umur": "20"
+};
+biodata["pekerjaan"] = "jualan barang bekas";
+biodata.addAll({"hobi": "jualan"});
+
+stdout.writeln("Biodata saya: $biodata");
+stdout.writeln("Nama saya ${biodata['nama']}, alamat saya di ${biodata['alamat']}, umur saya ${biodata['umur']} tahun, pekerjaan saya ${biodata['pekerjaan']}, hobi saya ${biodata['hobi']}");
+
 }
+
