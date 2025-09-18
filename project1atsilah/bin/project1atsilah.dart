@@ -31,4 +31,12 @@ void main(List<String> arguments) {
   // } else {
   //   stdout.writeln("Jenis kelamin saya perempuan");
   // } 
+
+  num nilai = 99.5; // bisa diisi int atau double
+  stdout.writeln("nilai saya $nilai");
+  dynamic bebas = "90"; // bisa diisi semua tipe data
+  stdout.writeln("nilai dari dynamic = $bebas");
+  String angka = "100";
+  int angkaku = int.parse(angka); // konversi String ke int
+  int angkaku2 = bebas;
 }
