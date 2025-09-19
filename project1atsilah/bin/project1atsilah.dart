@@ -55,5 +55,10 @@ biodata.addAll({"hobi": "jualan"});
 stdout.writeln("Biodata saya: $biodata");
 stdout.writeln("Nama saya ${biodata['nama']}, alamat saya di ${biodata['alamat']}, umur saya ${biodata['umur']} tahun, pekerjaan saya ${biodata['pekerjaan']}, hobi saya ${biodata['hobi']}");
 
+// null safety
+String? kendaraan; // 
+stdout.write("kendaraan saya $kendaraan");
+
+
 }
 
