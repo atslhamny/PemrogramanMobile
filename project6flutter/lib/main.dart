@@ -22,13 +22,12 @@ class AtsilahApp extends StatelessWidget {
             // Icons(Icons.more_vert),
           ],
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Baris 1"),
-            Text("Baris 2"),
-            Text("Baris 3"),
+            Icon(Icons.home, size: 50, color: Colors.blue),
+            Icon(Icons.business, size: 50, color: Colors.blue),
+            Icon(Icons.school, size: 50, color: Colors.blue),
           ],
         ),
         drawer: Drawer(
