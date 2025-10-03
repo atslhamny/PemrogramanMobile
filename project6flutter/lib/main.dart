@@ -16,6 +16,11 @@ class AtsilahApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
+          leading: Icon(Icons.menu),
+          actions: [
+            Icon(Icons.search),
+            // Icons(Icons.more_vert),
+          ],
         ),
         body: const Center(
           child: Text(
