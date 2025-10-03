@@ -28,13 +28,53 @@ class AtsilahApp extends StatelessWidget {
             style: TextStyle(fontSize: 24),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            // Action when button is pressed
-          },
-          child: Icon(Icons.add),
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     // Action when button is pressed
+        //   },
+        //   child: Icon(Icons.add),
+        //   backgroundColor: Colors.blue,
+        //   foregroundColor: Colors.white,
+        // ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text(
+                  'Menu',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+                onTap: () {
+                  // Navigate to Home
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  // Navigate to Settings
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.contact_mail),
+                title: Text('Contact Us'),
+                onTap: () {
+                  // Navigate to Contact Us
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
