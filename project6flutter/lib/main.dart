@@ -13,40 +13,23 @@ class AtsilahApp extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             "Atsilah App",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontFamily: 'Times New Roman',
-            ),
           ),
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(
-              child: Text(
-                "Welcome to Atsilah App",
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
-                  fontFamily: 'Times New Roman',
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            Center(
-              child: Image.network(
-                'https://example.com/atsilah_image.png',
-                width: 200,
-                height: 200,
-              ),
-            ),
-          ],
+        body: const Center(
+          child: Text(
+            "Hello, Atsilah!",
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            // Action when button is pressed
+          },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
         ),
       ),
     );
