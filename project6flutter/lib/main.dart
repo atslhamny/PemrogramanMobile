@@ -22,20 +22,15 @@ class AtsilahApp extends StatelessWidget {
             // Icons(Icons.more_vert),
           ],
         ),
-        body: const Center(
-          child: Text(
-            "Hello, Atsilah!",
-            style: TextStyle(fontSize: 24),
-          ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Baris 1"),
+            Text("Baris 2"),
+            Text("Baris 3"),
+          ],
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     // Action when button is pressed
-        //   },
-        //   child: Icon(Icons.add),
-        //   backgroundColor: Colors.blue,
-        //   foregroundColor: Colors.white,
-        // ),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
