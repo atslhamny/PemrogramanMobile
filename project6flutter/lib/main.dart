@@ -41,6 +41,16 @@ class AtsilahApp extends StatelessWidget {
                 },
                 child: const Text("Click Me"),
               ),
+
+              TextButton(
+                onPressed: () {
+                  print("Text Button ditekan!");
+                },
+                child: const Text(
+                  "PENCET GA!!",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),
