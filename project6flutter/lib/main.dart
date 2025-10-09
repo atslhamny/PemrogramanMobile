@@ -22,14 +22,27 @@ class AtsilahApp extends StatelessWidget {
             // Icons(Icons.more_vert),
           ],
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(Icons.home, size: 50, color: Colors.blue),
-            Icon(Icons.business, size: 50, color: Colors.blue),
-            Icon(Icons.school, size: 50, color: Colors.blue),
-          ],
+        body: 
+        Container(
+          width: 200,
+          height: 100,
+          color: Colors.blue,
+          child: const Center(
+            child: Text(
+              'Hello, Atsilah!',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
         ),
+        
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   children: [
+        //     Icon(Icons.home, size: 50, color: Colors.blue),
+        //     Icon(Icons.business, size: 50, color: Colors.blue),
+        //     Icon(Icons.school, size: 50, color: Colors.blue),
+        //   ],
+        // ),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
