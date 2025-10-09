@@ -35,12 +35,20 @@ class AtsilahApp extends StatelessWidget {
                 style: FlutterLogoStyle.horizontal,
                 textColor: Colors.black,
               ),
-              
+
               const Icon(
                 Icons.home,
                 size: 50,
                 color: Colors.white,
               ),
+
+              Image.asset(
+                'assets/download.jpeg',
+                width: 100,
+                height: 100,
+              ),
+
+              
 
               ElevatedButton(
                 onPressed: () {
