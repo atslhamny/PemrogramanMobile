@@ -22,15 +22,30 @@ class AtsilahApp extends StatelessWidget {
             // Icons(Icons.more_vert),
           ],
         ),
-        body: 
-        Container(
-          width: 200,
-          height: 100,
+       body: Container(
+          width: double.infinity,
+          height: double.infinity,
           color: Colors.blue,
           alignment: Alignment.bottomRight,
-          child:
-          const Text("Sudut Kanan Bawah"),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end, // posisi di bawah
+            crossAxisAlignment: CrossAxisAlignment.end, // posisi di kanan
+            children: [
+              const Text(
+                "Sudut Kanan Bawah",
+                style: TextStyle(color: Colors.white),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  print("Button ditekan!");
+                },
+                child: const Text("Click Me"),
+              ),
+            ],
+          ),
         ),
+
+        
         
         // Row(
         //   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -80,6 +95,7 @@ class AtsilahApp extends StatelessWidget {
             ],
           ),
         ),
+
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
