@@ -26,15 +26,16 @@ class AtsilahApp extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           color: Colors.blue,
-          alignment: Alignment.bottomRight,
+          alignment: Alignment.center,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end, // posisi di bawah
-            crossAxisAlignment: CrossAxisAlignment.end, // posisi di kanan
+            mainAxisAlignment: MainAxisAlignment.center, // posisi di bawah
             children: [
-              const Text(
-                "Sudut Kanan Bawah",
-                style: TextStyle(color: Colors.white),
+              const FlutterLogo(
+                size: 100,
+                style: FlutterLogoStyle.horizontal,
+                textColor: Colors.black,
               ),
+              
               ElevatedButton(
                 onPressed: () {
                   print("Button ditekan!");
