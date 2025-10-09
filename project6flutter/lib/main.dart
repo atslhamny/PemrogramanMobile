@@ -24,17 +24,12 @@ class AtsilahApp extends StatelessWidget {
         ),
         body: 
         Container(
-          width: 150,
-          height: 150,
-          decoration: BoxDecoration(
-            color: Colors.teal,
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: Colors.black,
-              width: 5,
-            ),
-          ),
-          
+          width: 200,
+          height: 100,
+          color: Colors.blue,
+          alignment: Alignment.bottomRight,
+          child:
+          const Text("Sudut Kanan Bawah"),
         ),
         
         // Row(
