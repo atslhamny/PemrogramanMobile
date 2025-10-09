@@ -48,6 +48,12 @@ class AtsilahApp extends StatelessWidget {
                 height: 100,
               ),
 
+              Image.network(
+                'https://flutter.dev/images/flutter-logo-sharing.png',
+                width: 100,
+                height: 100,
+              ),
+
               
 
               ElevatedButton(
