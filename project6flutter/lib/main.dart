@@ -61,6 +61,13 @@ class AtsilahApp extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
+
+              IconButton(
+                icon: Icon(Icons.thumb_up, color: Colors.white),
+                onPressed: () {
+                  print("Icon Button ditekan!");
+                },
+              ),
             ],
           ),
         ),
