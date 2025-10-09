@@ -24,17 +24,17 @@ class AtsilahApp extends StatelessWidget {
         ),
         body: 
         Container(
-          // width: 200,
-          // height: 100,
-          margin: const EdgeInsets.all(20), // jarak luar
-          padding: const EdgeInsets.all(10), // jarak dalam
-          color: Colors.blue,
-          child: const Center(
-            child: Text(
-              'Hello, Atsilah!',
-              style: TextStyle(color: Colors.white, fontSize: 20),
+          width: 150,
+          height: 150,
+          decoration: BoxDecoration(
+            color: Colors.teal,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Colors.black,
+              width: 5,
             ),
           ),
+          
         ),
         
         // Row(
