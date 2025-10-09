@@ -51,6 +51,16 @@ class AtsilahApp extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
+
+              OutlinedButton(
+                onPressed: () {
+                  print("Outlined Button ditekan!");
+                },
+                child: const Text(
+                  "OUTLINED BUTTON",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
           ),
         ),
