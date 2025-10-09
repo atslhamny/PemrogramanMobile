@@ -68,6 +68,13 @@ class AtsilahApp extends StatelessWidget {
                   print("Icon Button ditekan!");
                 },
               ),
+
+              FloatingActionButton(
+                onPressed: () {
+                  print("Floating Action Button ditekan!");
+                },
+                child: Icon(Icons.add),
+              ),
             ],
           ),
         ),
