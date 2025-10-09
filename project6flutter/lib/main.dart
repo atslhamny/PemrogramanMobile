@@ -24,8 +24,10 @@ class AtsilahApp extends StatelessWidget {
         ),
         body: 
         Container(
-          width: 200,
-          height: 100,
+          // width: 200,
+          // height: 100,
+          margin: const EdgeInsets.all(20), // jarak luar
+          padding: const EdgeInsets.all(10), // jarak dalam
           color: Colors.blue,
           child: const Center(
             child: Text(
