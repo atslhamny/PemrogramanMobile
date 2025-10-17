@@ -229,7 +229,13 @@ import 'package:flutter/material.dart';
 // }
 
 void main() {
-  runApp(HomePage());
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => HomePage(),
+      '/profile': (context) => ProfilePage(),
+    },
+  ));
 }
 
 class HomePage extends StatelessWidget {
@@ -242,13 +248,8 @@ class HomePage extends StatelessWidget {
         ),
         body: Center(
           child: ElevatedButton(
-            child: Text('Ke Halaman Kedua'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
-              );
-            },
+            onPressed: () => Navigator.pushNamed(context, '/profile'),
+            child: Text('Ke Halaman Profil'),  
           )
         ),
       ),
