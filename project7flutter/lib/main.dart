@@ -164,29 +164,65 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
+// void main() {
+//   runApp(GridExample());
+// }
+
+// class GridExample extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Grid Example')),
+//       body: GridView.count(
+//         crossAxisCount: 2,
+//         children: List.generate(6, (index) {
+//           return Card(
+//             color: Colors.blue[100],
+//             margin: EdgeInsets.all(8),
+//             child: Center(
+//               child: Text(
+//                 'Item ${index + 1}',
+//                 style: TextStyle(fontSize: 20),
+//               ),
+//             ),
+//           );
+//         }),
+//       ),
+//     );
+//   }
+// }
+
 void main() {
-  runApp(GridExample());
+  runApp(StylingExample());
 }
 
-class GridExample extends StatelessWidget {
+class StylingExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Grid Example')),
-      body: GridView.count(
-        crossAxisCount: 2,
-        children: List.generate(6, (index) {
-          return Card(
-            color: Colors.blue[100],
-            margin: EdgeInsets.all(8),
-            child: Center(
-              child: Text(
-                'Item ${index + 1}',
-                style: TextStyle(fontSize: 20),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Styling and Positioning'),
+        ),
+        body: Stack(
+          children: [
+            Container(color: Colors.lightBlueAccent),
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                color: Colors.blue,
+                child: Text(
+                  'Tengah Layar',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-          );
-        }),
+          ],
+        )
       ),
     );
   }
