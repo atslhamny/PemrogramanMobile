@@ -97,33 +97,68 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
+// void main() {
+//   runApp(ProfileLayout());
+// }
+
+// class ProfileLayout extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Profile Layout'),
+//         ),
+//        body: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           CircleAvatar(
+//             radius: 50, backgroundImage: AssetImage(  'assets/images/foto.png'),
+//           ),
+//           SizedBox(height: 10),
+//           Text(
+//             'Atsilah Amany Putri Harsuma',
+//             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//           ),
+//           SizedBox(height: 5),
+//           Text('Flutter Developer', style: TextStyle(fontSize: 16, color: Colors.grey[600])),
+//         ],
+//        ),
+//       ),
+//     );
+//   }
+// }
+
 void main() {
-  runApp(ProfileLayout());
+  runApp(ListViewExample());
 }
 
-class ProfileLayout extends StatelessWidget {
+class ListViewExample extends StatelessWidget {
+  final List<String> items = [
+    'Flutter',
+    'Dart',
+    'Firebase',
+    'UI/UX',
+    'API'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Profile Layout'),
+          title: Text('ListView Example'),
         ),
-       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            radius: 50, backgroundImage: AssetImage(  'assets/images/foto.png'),
-          ),
-          SizedBox(height: 10),
-          Text(
-            'Atsilah Amany Putri Harsuma',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 5),
-          Text('Flutter Developer', style: TextStyle(fontSize: 16, color: Colors.grey[600])),
-        ],
-       ),
+        body: ListView.builder(
+         itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Icon(Icons.code),
+              title: Text(items[index]),
+              onTap: () => print('Klik: ${items[index]}'),
+            );
+          },
+        ),
       ),
     );
   }
