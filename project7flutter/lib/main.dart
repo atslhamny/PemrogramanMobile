@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 // void main() {
 //   runApp(SingleChildExample());
@@ -228,13 +229,16 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
-void main() {
-  runApp(MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/': (context) => HomePage(),
-      '/profile': (context) => ProfilePage(),
-    },
+void main(){
+  final router = GoRouter(
+    routes: [
+      GoRoute(path: '/', builder: (context, state) => HomePage()),
+      GoRoute(path: '/profile', builder: (context, state) => ProfilePage()),
+    ],
+  );
+  runApp(
+    MaterialApp.router(
+      routerConfig: router,
   ));
 }
 
