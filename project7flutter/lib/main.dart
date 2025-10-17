@@ -129,36 +129,64 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
+// void main() {
+//   runApp(ListViewExample());
+// }
+
+// class ListViewExample extends StatelessWidget {
+//   final List<String> items = [
+//     'Flutter',
+//     'Dart',
+//     'Firebase',
+//     'UI/UX',
+//     'API'
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('ListView Example'),
+//         ),
+//         body: ListView.builder(
+//          itemCount: items.length,
+//           itemBuilder: (context, index) {
+//             return ListTile(
+//               leading: Icon(Icons.code),
+//               title: Text(items[index]),
+//               onTap: () => print('Klik: ${items[index]}'),
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 void main() {
-  runApp(ListViewExample());
+  runApp(GridExample());
 }
 
-class ListViewExample extends StatelessWidget {
-  final List<String> items = [
-    'Flutter',
-    'Dart',
-    'Firebase',
-    'UI/UX',
-    'API'
-  ];
-
+class GridExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('ListView Example'),
-        ),
-        body: ListView.builder(
-         itemCount: items.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Icon(Icons.code),
-              title: Text(items[index]),
-              onTap: () => print('Klik: ${items[index]}'),
-            );
-          },
-        ),
+    return Scaffold(
+      appBar: AppBar(title: Text('Grid Example')),
+      body: GridView.count(
+        crossAxisCount: 2,
+        children: List.generate(6, (index) {
+          return Card(
+            color: Colors.blue[100],
+            margin: EdgeInsets.all(8),
+            child: Center(
+              child: Text(
+                'Item ${index + 1}',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          );
+        }),
       ),
     );
   }
