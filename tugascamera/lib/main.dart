@@ -1,6 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' show join;
 
 void main() async {
@@ -46,21 +46,36 @@ class _CameraAppState extends State<CameraApp> {
       await _initializeControllerFuture;
       final picture = await _controller.takePicture();
 
-      final directory = await getApplicationDocumentsDirectory();
-      final name = '${DateTime.now().millisecondsSinceEpoch}.jpg';
-      final path = join(directory.path, name);
+      // 📂 Path penyimpanan manual (pastikan folder ini ada!)
+      final saveDir =
+          r'D:\KULIAH\05 SMT 5 PERKULIAHAN\00 PEMOB\JOBSHEET\DART\tugascamera\image';
 
+      // Buat nama file unik
+      final name = '${DateTime.now().millisecondsSinceEpoch}.jpg';
+      final path = join(saveDir, name);
+
+      // Simpan hasil foto
       await picture.saveTo(path);
 
-      setState(() {
-        imagePath = path;
-      });
+      // Update UI
+      if (mounted) {
+        setState(() {
+          imagePath = path;
+        });
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Foto tersimpan di: $path')),
-      );
+        // Tampilkan notifikasi SnackBar
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('📸 Foto tersimpan di: $path'),
+            duration: const Duration(seconds: 4),
+          ),
+        );
+      }
     } catch (e) {
-      print(e);
+      print("❌ Gagal mengambil foto: $e");
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Gagal mengambil foto!')));
     }
   }
 
@@ -84,10 +99,26 @@ class _CameraAppState extends State<CameraApp> {
                 children: [
                   Expanded(child: CameraPreview(_controller)),
                   if (imagePath != null)
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Path: $imagePath'),
+                    Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        Text(
+                          'Path: $imagePath',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Image.file(
+                          File(imagePath!),
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
+                      ],
                     ),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
