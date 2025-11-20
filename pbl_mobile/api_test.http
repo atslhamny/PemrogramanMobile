@@ -1,0 +1,39 @@
+### 1. Health Check - Test API Nyala atau Nggak
+GET http://localhost:8080/api/health
+
+###
+
+### 2. Get All Clocks
+GET http://localhost:8080/api/clocks
+
+###
+
+### 3. Get Clocks by User ID
+GET http://localhost:8080/api/clocks/user/user123
+
+###
+
+### 4. Create Clock - Clock In
+POST http://localhost:8080/api/clocks
+Content-Type: application/json
+
+{
+  "user_id": "user123",
+  "check_clock_type": "in"
+}
+
+###
+
+### 5. Create Clock - Clock Out
+POST http://localhost:8080/api/clocks
+Content-Type: application/json
+
+{
+  "user_id": "user123",
+  "check_clock_type": "out"
+}
+
+###
+
+### 6. Delete Clock (ganti ID sesuai data kamu)
+DELETE http://localhost:8080/api/clocks/1
