@@ -1,4 +1,4 @@
-import 'User.dart';
+import '../User.dart';
 void main() {
     // Object Dart ke JSON
     User user = User(
